@@ -16,11 +16,12 @@ Gatopedia es una pequeña aplicación web donde puedes aprender sobre razas de g
 ## 📂 Estructura del proyecto
 
 Gatopedia/
-├── index.html # Página principal
-├── style/
-│ └── main.css # Estilos personalizados
-├── add_cat.js # Lógica para cargar/agregar gatos
-└── README.md # Este archivo 😺
+
+- ├── index.html # Página principal
+- ├── style/
+- │ └── main.css # Estilos personalizados
+- ├── add_cat.js # Lógica para cargar/agregar gatos
+- └── README.md # Este archivo 😺
 
 ---
 
