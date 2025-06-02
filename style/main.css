@@ -2,66 +2,86 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #fefefe;
-  color: #333;
+  background-color: #f5fdf7;
+  color: #2f2f2f;
 }
 
 header {
-  background-color: #ffd6d6;
+  background-color: #d6f5d6;
   padding: 2rem;
   text-align: center;
-  border-bottom: 3px solid #ffa6a6;
+  border-bottom: 3px solid #a8e6a3;
+  animation: fadeIn 1s ease-in-out;
 }
 
 header h1 {
   margin: 0;
   font-size: 2.5rem;
-  color: #b30000;
+  color: #2e7d32;
+  transition: color 0.3s ease;
+}
+
+header h1:hover {
+  color: #1b5e20;
 }
 
 header p {
   margin-top: 0.5rem;
   font-size: 1.2rem;
-  color: #5a5a5a;
+  color: #4b4b4b;
 }
 
 main {
   padding: 2rem;
   max-width: 1000px;
   margin: 0 auto;
+  animation: fadeInUp 1s ease;
 }
 
 h2 {
-  color: #b30000;
-  border-bottom: 2px solid #ffc1c1;
+  color: #388e3c;
+  border-bottom: 2px solid #b2dfdb;
   padding-bottom: 0.3rem;
 }
 
 form {
   margin-top: 1rem;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1rem;
-  max-width: 400px;
+  max-width: 100%;
 }
 
-form input, form button {
-  padding: 0.7rem;
-  font-size: 1rem;
-  border-radius: 8px;
-  border: 1px solid #ccc;
+form input {
+  padding: 0.6rem;
+  font-size: 0.95rem;
+  border-radius: 6px;
+  border: 1px solid #bbb;
+  width: 180px;
+  transition: box-shadow 0.3s ease;
+}
+
+form input:focus {
+  outline: none;
+  border-color: #81c784;
+  box-shadow: 0 0 5px rgba(129, 199, 132, 0.5);
 }
 
 form button {
-  background-color: #ff6f61;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.95rem;
+  background-color: #66bb6a;
   color: white;
   border: none;
+  border-radius: 6px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
 form button:hover {
-  background-color: #e6514f;
+  background-color: #4caf50;
+  transform: scale(1.05);
 }
 
 #lista-gatos {
@@ -72,28 +92,49 @@ form button:hover {
 }
 
 .gato {
-  background-color: #fff0f0;
+  background-color: #e8f5e9;
   padding: 1rem;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  transition: transform 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 0.8s ease;
 }
 
 .gato:hover {
-  transform: scale(1.02);
+  transform: translateY(-5px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
 }
 
 .gato h3 {
   margin-top: 0;
-  color: #b30000;
+  color: #2e7d32;
 }
 
 footer {
-  background-color: #ffd6d6;
+  background-color: #d6f5d6;
   text-align: center;
   padding: 1rem;
   margin-top: 2rem;
   font-size: 0.9rem;
   color: #444;
+  border-top: 2px solid #a8e6a3;
 }
+
+/* Animaciones */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
