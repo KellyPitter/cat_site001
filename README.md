@@ -56,4 +56,6 @@ Proyecto creado con amor por **Kelly** ❤️
 
 ![Gatopedia screenshot](img/web_pic.png)
 
+![Gatopedia screenshot](img/web_pic2.png)
+
 ---
