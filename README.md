@@ -55,7 +55,6 @@ Proyecto creado con amor por **Kelly** ❤️
 ## 📸 Vista previa
 
 ![Gatopedia screenshot](img/web_pic.png)
-
 ![Gatopedia screenshot](img/web_pic2.png)
 
 ---
