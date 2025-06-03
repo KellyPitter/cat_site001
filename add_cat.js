@@ -184,6 +184,7 @@ document.addEventListener('DOMContentLoaded', function () {
             gatos.push(nuevoGato);
             renderizarGatos();
             form.reset();
+            window.location.href = "index.html";
         } catch (error) {
             console.error("Error al agregar gato:", error);
         }
