@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Cargar gatos existentes
     fetch('http://127.0.0.1:5000/gatos')
+
         .then(response => response.json())
         .then(data => {
             data.forEach(gato => {
@@ -25,6 +26,21 @@ document.addEventListener('DOMContentLoaded', function () {
                     <p>${gato.descripcion}</p>
                     <img src="${gato.imagen}" alt="${gato.nombre}" style="width: 100%; max-width: 200px; border-radius: 8px;">
                 `;
+
+                // 🔴 AQUI AGREGAS EL BOTÓN DE ELIMINAR
+                const btnEliminar = document.createElement("button");
+                btnEliminar.textContent = "Eliminar";
+                btnEliminar.style.marginTop = "10px";
+                btnEliminar.style.backgroundColor = "#ff4d4d";
+                btnEliminar.style.color = "#fff";
+                btnEliminar.style.border = "none";
+                btnEliminar.style.padding = "6px 10px";
+                btnEliminar.style.borderRadius = "4px";
+                btnEliminar.style.cursor = "pointer";
+
+
+                div.appendChild(btnEliminar); // 👈 Agrega el botón al div
+
                 contenedor.appendChild(div);
             });
         });
