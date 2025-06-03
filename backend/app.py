@@ -22,7 +22,8 @@ def listar_gatos():
                 "id": g[0],
                 "nombre": g[1],
                 "origen": g[2],
-                "descripcion": g[3]
+                "descripcion": g[3],
+                "imagen": g[4]
             })
         return jsonify(gatos_dict)
     
@@ -31,11 +32,17 @@ def listar_gatos():
         nombre = data.get('nombre')
         origen = data.get('origen')
         descripcion = data.get('descripcion')
+        imagen = data.get('imagen')
 
         from database import agregar_gato
-        agregar_gato(nombre, origen, descripcion)
+        agregar_gato(nombre, origen, descripcion, imagen)
         
-        return jsonify({"mensaje": "Gato agregado correctamente"}), 201
+        return jsonify({
+            "nombre": nombre,
+            "origen": origen,
+            "descripcion": descripcion,
+            "imagen": imagen
+        }), 201 
 
 if __name__ == '__main__':
     app.run(debug=True)

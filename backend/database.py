@@ -6,26 +6,26 @@ def conectar():
     return sqlite3.connect(DB_NAME)
 
 def crear_tabla():
-    conn = conectar()
-    cursor = conn.cursor()
-    cursor.execute('''
+    conn = sqlite3.connect('gatos.db')
+    c = conn.cursor()
+    c.execute('''
         CREATE TABLE IF NOT EXISTS gatos (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
-            nombre TEXT NOT NULL,
+            nombre TEXT,
             origen TEXT,
-            descripcion TEXT
+            descripcion TEXT,
+            imagen TEXT
         )
     ''')
     conn.commit()
     conn.close()
 
-def agregar_gato(nombre, origen, descripcion):
-    conn = conectar()
-    cursor = conn.cursor()
-    cursor.execute('''
-        INSERT INTO gatos (nombre, origen, descripcion)
-        VALUES (?, ?, ?)
-    ''', (nombre, origen, descripcion))
+
+def agregar_gato(nombre, origen, descripcion, imagen):
+    conn = sqlite3.connect('gatos.db')
+    c = conn.cursor()
+    c.execute('''INSERT INTO gatos (nombre, origen, descripcion, imagen) VALUES (?, ?, ?, ?)''',
+              (nombre, origen, descripcion, imagen))
     conn.commit()
     conn.close()
 
