@@ -38,11 +38,32 @@ document.addEventListener('DOMContentLoaded', function () {
                 btnEliminar.style.borderRadius = "4px";
                 btnEliminar.style.cursor = "pointer";
 
+                // ✅ Asignar evento al botón
+                btnEliminar.addEventListener('click', () => {
+                    if (confirm(`¿Seguro que quieres eliminar a ${gato.nombre}?`)) {
+                        fetch(`http://127.0.0.1:5000/gatos/${gato.id}`, {
+                            method: 'DELETE'
+                        })
+                            .then(res => {
+                                if (res.ok) {
+                                    div.remove(); // Eliminar del DOM
+                                } else {
+                                    alert('Error al eliminar el gato.');
+                                }
+                            })
+                            .catch(err => {
+                                console.error('Error al eliminar:', err);
+                            });
+                    }
+                });
 
                 div.appendChild(btnEliminar); // 👈 Agrega el botón al div
 
                 contenedor.appendChild(div);
             });
+        })
+        .catch(error => {
+            console.error('Error al cargar gatos:', error);
         });
 
     // Manejar formulario
